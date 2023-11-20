@@ -1,0 +1,7 @@
+# 位置:根目录中
+# 作用:忽略某些文件/文件夹复制到镜像中
+
+docker_build_other-Dockerfile.test.png
+docker_build_.png
+.dockerignore
+other
