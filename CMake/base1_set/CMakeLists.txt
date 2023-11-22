@@ -6,7 +6,7 @@ Set a normal, cache, or environment variable to a given value.
 See the cmake-language(7) variables documentation for the scopes and interaction of normal variables and cache entries.
 
 ]]
-set(CMAKE_CXX_STANDARD 17)  # 指定c++标准:98(C++98)/11(C++11)/14(C++14)/20(C++20)/23(C++23)/26(C++26)
+set(CMAKE_CXX_STANDARD 17)  # 指定c++标准为C++17
 
 set(OBJ_VAR main.cpp add.cpp sub.cpp)
 #[[
