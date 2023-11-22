@@ -1,23 +1,3 @@
-```shell
-# base项目构建
-
-# Build dir
-mkdir build
-cd build
-
-# Windows
-# cmake .. -G "MinGW Makefiles"
-# or
-# Linux
-cmake
-
-# Windows
-# mingw32-make.exe
-# or 
-# Linux
-make
-```
-
 * -S <path-to-source>
     * Path to root directory of the CMake project to build.
 

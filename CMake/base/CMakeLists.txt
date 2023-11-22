@@ -13,8 +13,21 @@ The <name> corresponds to the logical target name and must be globally unique wi
 add_executable(base main.cpp)
 
 #[[
+# 构建base项目
 
+# Build dir
+mkdir build
+cd build
 
-]]
+# Windows
 # cmake .. -G "MinGW Makefiles"
+# or
+# Linux
+cmake
+
+# Windows
 # mingw32-make.exe
+# or
+# Linux
+make
+]]
