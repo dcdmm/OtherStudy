@@ -2,7 +2,7 @@
 # Sets the minimum required version of cmake for a project.
 cmake_minimum_required(VERSION 3.26)
 # Sets the name of the project, and stores it in the variable PROJECT_NAME.
-project(base)
+project(base0)
 #[[
 多行注释
 ]]
@@ -10,7 +10,7 @@ project(base)
 Adds an executable target called <name> to be built from the source files listed in the command invocation.
 The <name> corresponds to the logical target name and must be globally unique within a project.
 ]]
-add_executable(base main.cpp)
+add_executable(base0 main.cpp)
 
 #[[
 # 构建base项目
