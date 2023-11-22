@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 #[[
 Find all source files in a directory
 
-aux_source_directory(<dir> <variable>)
+`aux_source_directory(<dir> <variable>)`
 
 Collects the names of all the source files in the specified directory and stores the list in the <variable> provided.
 ]]

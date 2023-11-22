@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(base1_set)
+project(command_set0)
 
 #[[
 Set a normal, cache, or environment variable to a given value.
@@ -13,5 +13,5 @@ set(OBJ_VAR main.cpp add.cpp sub.cpp)
 A variable reference has the form ${<variable>} and is evaluated inside a Quoted Argument or an Unquoted Argument.
 A variable reference is replaced by the value of the specified variable or cache entry, or if neither is set, by the empty string. Variable references can nest and are evaluated from the inside out, e.g. ${outer_${inner_variable}_variable}.
 ]]
-add_executable(base1_set ${OBJ_VAR})
+add_executable(command_set0 ${OBJ_VAR})
 # add_executable(qwer main.cpp add.cpp sub.cpp) # 与上等价

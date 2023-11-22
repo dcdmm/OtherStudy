@@ -9,7 +9,7 @@
       it.
 
   | Command Line             | Source Dir | Build Dir |
-        |:-------------------------|:-----------|:----------|
+          |:-------------------------|:-----------|:----------|
   | `cmake -B build`         | cwd        | `build`   |
   | `cmake -B build src`     | `src`      | `build`   |
   | `cmake -B build -S src`  | `src`      | `build`   |
@@ -32,7 +32,7 @@
 ## cmake-variables(7)
 
 * PROJECT_NAME
-  * Name of the project given to the project command.
+    * Name of the project given to the project command.
 
 * CMAKE_CXX_STANDARD
     * Default value
@@ -46,5 +46,11 @@
     * This is the source directory of the last call to the project() command made in the current directory scope or one
       of its parents.
 
-* PROJECT_BINARY_DIR¶
+* PROJECT_BINARY_DIR
     * Full path to build directory for project.
+
+* CMAKE_CURRENT_SOURCE_DIR
+    * This is the full path to the source directory that is currently being processed by cmake.
+
+* CMAKE_CURRENT_BINARY_DIR
+    * This is the full path to the build directory that is currently being processed by cmake.
