@@ -22,10 +22,9 @@ They are also added to the INCLUDE_DIRECTORIES target property for each target i
 Specifies include directories to use when compiling a given target.
 ]]
 target_include_directories(c_target_include_directories0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-# Get a property from a target.
+
 get_target_property(DIRS c_target_include_directories0 INCLUDE_DIRECTORIES)
 message("target_include_directories: ${DIRS}")
-
 
 #[[
 Note: Prefer the target_include_directories() command to add include directories to individual targets and optionally propagate/export them to dependents.

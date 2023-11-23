@@ -13,7 +13,7 @@
       it.
 
   | Command Line             | Source Dir | Build Dir |
-  |:-------------------------|:-----------|:----------|
+          |:-------------------------|:-----------|:----------|
   | `cmake -B build`         | cwd        | `build`   |
   | `cmake -B build src`     | `src`      | `build`   |
   | `cmake -B build -S src`  | `src`      | `build`   |
@@ -62,4 +62,34 @@
 ## cmake-properties(7)
 
 * INCLUDE_DIRECTORIES
-  * List of preprocessor include file search directories.
+    * List of preprocessor include file search directories.
+
+* ARCHIVE_OUTPUT_DIRECTORY
+    * Output directory in which to
+      build [ARCHIVE](https://cmake.org/cmake/help/latest/prop_tgt/ARCHIVE_OUTPUT_DIRECTORY.html#prop_tgt:ARCHIVE_OUTPUT_DIRECTORY)
+      target files.
+    * 使用参考:c_set_target_properties0
+
+* LIBRARY_OUTPUT_DIRECTORY
+    * Output directory in which to
+      build [LIBRARY](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#library-output-artifacts)
+      target files.
+    * 使用参考:c_set_target_properties0
+
+* RUNTIME_OUTPUT_DIRECTORY
+    * Output directory in which to
+      build [RUNTIME](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#runtime-output-artifacts)
+      target files.
+    * 使用参考:c_set_target_properties0
+
+## cmake-commands(7)
+
+* get_target_property
+
+  Get a property from a target.
+
+  `get_target_property(<VAR> target property)`
+
+  Get a property from a target. The value of the property is stored in the variable <VAR>.
+
+  使用参考:c_target_include_directories0
