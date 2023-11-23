@@ -1,3 +1,7 @@
+* PRIVATE property is only for the internal usage by the property owner,
+* PUBLIC property is for both internal usage by the property owner and for other targets that use it (link with it),
+* INTERFACE property is only for usage by other libraries.
+
 ## cmake(1)
 
 * -S <path-to-source>
@@ -9,7 +13,7 @@
       it.
 
   | Command Line             | Source Dir | Build Dir |
-          |:-------------------------|:-----------|:----------|
+  |:-------------------------|:-----------|:----------|
   | `cmake -B build`         | cwd        | `build`   |
   | `cmake -B build src`     | `src`      | `build`   |
   | `cmake -B build -S src`  | `src`      | `build`   |
@@ -54,3 +58,8 @@
 
 * CMAKE_CURRENT_BINARY_DIR
     * This is the full path to the build directory that is currently being processed by cmake.
+
+## cmake-properties(7)
+
+* INCLUDE_DIRECTORIES
+  * List of preprocessor include file search directories.

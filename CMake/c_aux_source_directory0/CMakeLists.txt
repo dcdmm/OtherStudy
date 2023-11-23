@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(base2_aux_source_directory)
+project(c_aux_source_directory0)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -12,4 +12,4 @@ Collects the names of all the source files in the specified directory and stores
 ]]
 aux_source_directory(${PROJECT_SOURCE_DIR} OBJ_VAR)
 
-add_executable(base2_aux_source_directory ${OBJ_VAR})
+add_executable(c_aux_source_directory0 ${OBJ_VAR})
