@@ -13,7 +13,7 @@ The <name> corresponds to the logical target name and must be globally unique wi
 add_executable(base0 main.cpp)
 
 #[[
-# 构建base项目
+# 构建base项目步骤
 
 # Build dir
 mkdir build

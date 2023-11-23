@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/head.h"
+#include "head.h"
 
 int main() {
     int a = 20;
