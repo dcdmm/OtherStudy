@@ -3,7 +3,7 @@ project(c_target_include_directories0)
 
 set(CMAKE_CXX_STANDARD 17)
 
-file(GLOB OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR} src/*.cpp)
+file(GLOB OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR} src/*.cpp)  # c_file0目录(不遍历子目录)下src目录下所有cpp文件
 add_executable(c_target_include_directories0 ${OBJ_VAR} main.cpp)
 
 #[[
