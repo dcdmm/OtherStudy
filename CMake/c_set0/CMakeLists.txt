@@ -9,7 +9,19 @@ cmake-language(7) variables:https://cmake.org/cmake/help/latest/manual/cmake-lan
 ]]
 set(CMAKE_CXX_STANDARD 17)  # 指定c++标准为C++17
 
-set(OBJ_VAR main.cpp add.cpp sub.cpp)
+set(OBJ_VAR
+        main.cpp
+        add.cpp
+        sub.cpp)
+
+message("***********************")
+# 参考:https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#cmake-language-lists
+set(srcs a.c b.c c.c) # sets "srcs" to "a.c;b.c;c.c"
+message(${srcs})
+
+message(${OBJ_VAR})
+message("***********************")
+
 #[[
 A variable reference has the form ${<variable>} and is evaluated inside a Quoted Argument or an Unquoted Argument.
 A variable reference is replaced by the value of the specified variable or cache entry, or if neither is set, by the empty string.
