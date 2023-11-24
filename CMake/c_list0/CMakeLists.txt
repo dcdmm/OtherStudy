@@ -11,6 +11,7 @@ semicolon-separated lists:https://cmake.org/cmake/help/latest/manual/cmake-langu
 list(APPEND L0 "a" "b" "c")  # APPEND:Appends elements to the list.
 message("L0:" ${L0})  # a;b;c
 
-file(GLOB SRC ${PROJECT_SOURCE_DIR} src/*.cpp)
-message("SRC:" ${SRC})
-
+file(GLOB OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h)
+message("init OBJ_VAR:" ${OBJ_VAR})
+list(REMOVE_ITEM OBJ_VAR ${PROJECT_SOURCE_DIR}/src/head.h) #REMOVE_ITEM:Removes all instances of the given items from the list.
+message("remove after OBJ_VAR:" ${OBJ_VAR})

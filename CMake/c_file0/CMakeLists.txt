@@ -21,5 +21,9 @@ Examples of globbing expressions include:
 *.vt?       match all files with extension vta, ..., vtz
 f[3-5].txt  match files f3.txt, f4.txt, f5.txt
 ]]
-file(GLOB OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR} *.cpp) # c_file0目录(不遍历子目录)下所有cpp文件
+# c_file0/main.cpp和c_file0/src目录(不递归遍历子目录)下所有.cpp文件
+file(GLOB OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+# c_file0/main.cpp和c_file0/src目录(还递归所有子目录)下所有.cpp文件
+# file(GLOB_RECURSE OBJ_VAR ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 add_executable(c_file0 ${OBJ_VAR})
