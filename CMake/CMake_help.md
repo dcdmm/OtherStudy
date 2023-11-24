@@ -84,6 +84,10 @@
     * Output directory in which to build [RUNTIME](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#runtime-output-artifacts) target files.
     * 使用参考:c_set_target_properties0
 
+* COMPILE_DEFINITIONS
+  * Preprocessor definitions for compiling a directory's sources.
+  * 使用参考:c_add_compile_definitions0
+
 ## cmake-commands(7)
 
 * get_target_property
@@ -96,3 +100,16 @@
     ```
 
   * 使用参考:c_target_include_directories0
+
+
+* get_directory_property
+  ```markdown
+  Get a property of DIRECTORY scope.
+  
+  `get_directory_property(<variable> [DIRECTORY <dir>] <prop-name>)`
+  
+  Stores a property of directory scope in the named <variable>.
+  
+  The DIRECTORY argument specifies another directory from which to retrieve the property value instead of the current directory. 
+  Relative paths are treated as relative to the current source directory. 
+  ```
