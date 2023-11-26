@@ -2,7 +2,7 @@
 #include "sort.h"
 
 void selectionSort(std::vector<int> &arr) {
-    size_t n = arr.size();
+    std::size_t n = arr.size();
     for (int i = 0; i < n - 1; i++) {
         int minIndex = i;
         for (int j = i + 1; j < n; j++) {

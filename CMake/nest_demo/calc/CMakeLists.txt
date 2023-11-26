@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.21)
 
 aux_source_directory(./ SRC)
 add_library(calc STATIC ${SRC})  # 静态库
