@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.21)
 project(c_target_link_libraries0)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -19,7 +19,7 @@ set_target_properties(c_target_link_libraries0
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/dll_a)
 
 # 可执行程序链接动态库
-target_link_libraries(c_target_link_libraries0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dll_a/libadd_sub_sh.dll)
+target_link_libraries(c_target_link_libraries0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dll_a/libadd_sub_sh.so)
 
 # 可执行程序链接静态库
 # target_link_libraries(c_target_link_libraries0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dll_a/libadd_sub_st.a)

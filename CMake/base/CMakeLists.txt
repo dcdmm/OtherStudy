@@ -1,6 +1,6 @@
 # 注释
 # Sets the minimum required version of cmake for a project.
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.21)
 # Sets the name of the project, and stores it in the variable PROJECT_NAME.
 project(base0)
 #[[
