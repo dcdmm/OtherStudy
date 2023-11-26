@@ -23,3 +23,5 @@ target_link_libraries(c_target_link_libraries0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR
 
 # 可执行程序链接静态库
 # target_link_libraries(c_target_link_libraries0 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dll_a/libadd_sub_st.a)
+
+# 动态库链接动态库参考:nest_demo1
