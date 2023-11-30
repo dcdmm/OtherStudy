@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.21)
 
 project(example)
 
-add_subdirectory(pybind11)
+# 需先安装好pybind11(推荐使用vcpkg)
+find_package(pybind11 CONFIG)
 
 pybind11_add_module(example main.cpp)
 

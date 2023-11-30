@@ -68,6 +68,10 @@
 * CMAKE_MODULE_PATH
     * Semicolon-separated list of directories, represented using forward slashes, specifying a search path for CMake modules to be loaded by the include() or find_package() commands before checking the default modules that come with CMake. 
     * By default it is empty. It is intended to be set by the project.
+* CMAKE_TOOLCHAIN_FILE
+    * Path to toolchain file supplied to cmake(1).
+    * This variable is specified on the command line when cross-compiling with CMake. 
+    * It is the path to a file which is read early in the CMake run and which specifies locations for compilers and toolchain utilities, and other target platform and compiler related information.
 
 ## cmake-properties(7)
 
