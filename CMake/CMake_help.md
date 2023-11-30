@@ -62,6 +62,13 @@
 * CMAKE_CURRENT_BINARY_DIR
     * This is the full path to the build directory that is currently being processed by cmake.
 
+* CMAKE_PREFIX_PATH
+    * Semicolon-separated list of directories specifying installation prefixes to be searched by the find_package(), find_program(), find_library(), find_file(), and find_path() commands.
+
+* CMAKE_MODULE_PATH
+    * Semicolon-separated list of directories, represented using forward slashes, specifying a search path for CMake modules to be loaded by the include() or find_package() commands before checking the default modules that come with CMake. 
+    * By default it is empty. It is intended to be set by the project.
+
 ## cmake-properties(7)
 
 * INCLUDE_DIRECTORIES
@@ -113,3 +120,4 @@
   The DIRECTORY argument specifies another directory from which to retrieve the property value instead of the current directory. 
   Relative paths are treated as relative to the current source directory. 
   ```
+  * 使用参考:c_target_compile_definition0
