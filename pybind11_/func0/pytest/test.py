@@ -17,6 +17,10 @@ print(func0.multi.__doc__)
 print(func0_py.multi.__doc__)
 print('*' * 100)
 
+print(func0.div.__doc__)
+print(func0_py.div.__doc__)
+print('*' * 100)
+
 print(func0.add(1, 2))
 print(func0_py.add(1, 2))
 print('*' * 100)
@@ -29,3 +33,7 @@ print(func0.multi())  # 使用默认参数
 print(func0_py.multi())
 print(func0.multi(i=4))
 print(func0_py.multi(i=4))
+print('*' * 100)
+
+print(func0.div(1, 3))
+print(func0_py.div(1, 3))

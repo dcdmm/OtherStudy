@@ -25,4 +25,9 @@ PYBIND11_MODULE(func0, m) {
 
     m.def("multi", &multi, "func0 multi doc",
           py::arg("i") = 1, py::arg("j") = 1); // 默认参数
+
+    m.def("div",
+          [](double i, double j) {return i / j;},  // lambda函数
+          "func0 div doc",
+          py::arg("i") = 1.0, py::arg("j") = 1.0);
 }
