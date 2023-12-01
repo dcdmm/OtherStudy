@@ -15,3 +15,16 @@ c_py.setName("hello python!")
 
 print(c.getName())
 print(c_py.getName())
+
+print(c.age)  # 类属性
+print(class0.Pet.age)
+print(c_py.age)
+print(class0_py.Pet.age)
+
+print(c.howAge())
+print(class0.Pet.howAge())
+print(c.howAge())
+print(class0_py.Pet.howAge())
+
+print(c.name)  # 实例属性
+print(c_py.name)

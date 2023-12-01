@@ -15,16 +15,16 @@ int multi(int i = 1, int j = 1) {
 }
 
 PYBIND11_MODULE(func0, m) {
-    m.doc() = "func0 doc";  // 模块文档
+    m.doc() = "func0 doc";  // 绑定python模块文档
 
     m.def("add", &add,
-          "func0 add doc");  // 函数文档
+          "func0 add doc");  // 对应python函数文档
 
     m.def("sub", &sub, "func0 sub doc",
-          py::arg("i"), py::arg("j")); // 关键字参数
+          py::arg("i"), py::arg("j")); // 对应python函数关键字参数
 
     m.def("multi", &multi, "func0 multi doc",
-          py::arg("i") = 1, py::arg("j") = 1); // 默认参数
+          py::arg("i") = 1, py::arg("j") = 1); // 对应python函数默认参数
 
     m.def("div",
           [](double i, double j) {return i / j;},  // lambda函数

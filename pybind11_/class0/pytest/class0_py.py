@@ -1,4 +1,6 @@
 class Pet:
+    age = 100  # 类属性
+
     def __init__(self, name):
         self.name = name
 
@@ -10,3 +12,7 @@ class Pet:
 
     def __repr__(self):
         return "<example.Pet named '" + self.name + "'>"
+
+    @staticmethod
+    def howAge():
+        return Pet.age
