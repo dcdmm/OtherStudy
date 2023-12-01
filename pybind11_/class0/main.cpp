@@ -16,6 +16,11 @@ struct Pet {
 
 int Pet::age = 100;
 
+struct Pet_dyn {
+    Pet_dyn(const std::string &name) : name(name) { }
+    std::string name;
+};
+
 class People {
 public:
     People(const std::string &name) : name(name) { }
@@ -39,6 +44,11 @@ PYBIND11_MODULE(class0, m) {
             .def_readwrite_static("age", &Pet::age) // 绑定python 类属性(python类属性是静态变量)
 
             .def_readwrite("name", &Pet::name); // 绑定python 实例属性
+
+    py::class_<Pet_dyn>(m, "Pet_dyn",
+                        py::dynamic_attr())  // 弃用动态绑定属性(默认不支持)
+            .def(py::init<const std::string &>())
+            .def_readwrite("name", &Pet_dyn::name);
 
     py::class_<People>(m, "People")
             .def(py::init<const std::string &>())
