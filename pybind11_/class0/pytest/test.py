@@ -28,3 +28,14 @@ print(class0_py.Pet.howAge())
 
 print(c.name)  # 实例属性
 print(c_py.name)
+
+print('*' * 100)
+p = class0.People("dcdmm")
+print(p.name)
+p.name = "dcgo"
+print(p.name)
+
+p_py = class0_py.People("dcdmm_py")
+print(p_py.name)
+p_py.name = "dcgo_py"
+print(p_py.name)
