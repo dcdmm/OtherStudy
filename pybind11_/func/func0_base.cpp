@@ -14,9 +14,7 @@ int multi(int i = 1, int j = 1) {
     return i * j;
 }
 
-PYBIND11_MODULE(func0, m) {
-    m.doc() = "func0 doc";  // 绑定python模块文档
-
+PYBIND11_MODULE(func0_base, m) {
     m.def("add", &add,
           "func0 add doc");  // 对应python函数文档
 
