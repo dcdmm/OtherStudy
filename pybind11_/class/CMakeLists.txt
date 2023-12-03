@@ -5,7 +5,7 @@ project(class)
 find_package(pybind11 CONFIG)
 
 pybind11_add_module(class0_base class0_base.cpp)
-set_target_properties(class0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest)
+set_target_properties(class0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class0_base)
 
 pybind11_add_module(class_get_set class_get_set.cpp)
-set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest)
+set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_get_set)
