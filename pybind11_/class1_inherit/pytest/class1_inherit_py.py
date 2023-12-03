@@ -9,3 +9,7 @@ class Dog(Pet):
 
     def bark(self):
         return "woof_py!"
+
+
+def pet_store(pet):
+    return pet.bark()

@@ -46,7 +46,7 @@ PYBIND11_MODULE(class0, m) {
             .def_readwrite("name", &Pet::name); // 绑定python 实例属性
 
     py::class_<Pet_dyn>(m, "Pet_dyn",
-                        py::dynamic_attr())  // 弃用动态绑定属性(默认不支持)
+                        py::dynamic_attr())  // 启用动态绑定属性(默认不支持)
             .def(py::init<const std::string &>())
             .def_readwrite("name", &Pet_dyn::name);
 
