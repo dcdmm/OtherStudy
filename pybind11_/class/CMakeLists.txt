@@ -12,3 +12,6 @@ set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_
 
 pybind11_add_module(class_polymorphic class_polymorphic.cpp)
 set_target_properties(class_polymorphic PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_polymorphic)
+
+pybind11_add_module(class_overload class_overload.cpp)
+set_target_properties(class_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_overload)
