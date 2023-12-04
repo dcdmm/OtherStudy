@@ -7,5 +7,5 @@ find_package(pybind11 CONFIG)
 pybind11_add_module(func0_base func0_base.cpp)
 set_target_properties(func0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/func0_base)
 
-pybind11_add_module(func_template func_template.cpp)
-set_target_properties(func_template PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/func_template)
+pybind11_add_module(func_template_overload func_template_overload.cpp)
+set_target_properties(func_template_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/func_template_overload)

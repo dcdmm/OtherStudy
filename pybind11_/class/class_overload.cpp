@@ -23,7 +23,7 @@ struct Pet {
 PYBIND11_MODULE(class_overload, m) {
     py::class_<Pet>(m, "Pet")
             .def(py::init<const std::string &, int>())
-            // 方法重载
+            // 函数重载
             .def("set", py::overload_cast<int>(&Pet::set), "Set the pet's age")
             .def("set", py::overload_cast<const std::string &>(&Pet::set), "Set the pet's name")
 
