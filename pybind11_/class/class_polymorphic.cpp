@@ -24,7 +24,7 @@ struct PolymorphicDog : PolymorphicPet { //
 };
 
 
-PYBIND11_MODULE(class1_inherit, m) {
+PYBIND11_MODULE(class_polymorphic, m) {
     py::class_<Pet>(m, "Pet")
             .def(py::init<const std::string &>())
             .def_readwrite("name", &Pet::name);
@@ -49,10 +49,7 @@ PYBIND11_MODULE(class1_inherit, m) {
             .def(py::init<>())
             .def("bark", &PolymorphicDog::bark);
 
-    /*
-     * Given a pointer to a polymorphic base, pybind11 performs automatic downcasting to the actual derived type.
-     * Note that this goes beyond the usual situation in C++: we don’t just get access to the virtual functions of the base, we get the concrete derived type including functions and attributes that the base type may not even be aware of.
-     */
+    // Given a pointer to a polymorphic base, pybind11 performs automatic downcasting to the actual derived type.(c++通过需要使用dynamic_cast来做这种转换,参考:CPPStudy\g_advanced\RTTI_dynamic_cast_typeid_.cpp)
     m.def("pet_store2", []() { return std::unique_ptr<PolymorphicPet>(new PolymorphicDog); });
 }
 

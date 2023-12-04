@@ -9,3 +9,6 @@ set_target_properties(class0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CU
 
 pybind11_add_module(class_get_set class_get_set.cpp)
 set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_get_set)
+
+pybind11_add_module(class_polymorphic class_polymorphic.cpp)
+set_target_properties(class_polymorphic PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_polymorphic)
