@@ -9,6 +9,8 @@
 #include <map>
 #include <set>
 
+namespace py = pybind11;
+
 // python:list ===> c++:std::vector/std::deque/std::list/std::array/std::valarray
 // python:dict ===> c++:std::map
 // python:set ===> c++:std::set
@@ -67,6 +69,10 @@ void print_set(const std::set<int>& i) {
     std::cout << std::endl << std::endl;
 }
 
+void modify_list(py::list py_list) {
+    py_list.append(-1);
+}
+
 PYBIND11_MODULE(stl_type, m) {
     m.def("print_vector", &print_vector);
     m.def("print_deque", &print_deque);
@@ -77,4 +83,6 @@ PYBIND11_MODULE(stl_type, m) {
     m.def("print_map", &print_map);
 
     m.def("print_set", &print_set);
+
+    m.def("modify_list", &modify_list);
 }

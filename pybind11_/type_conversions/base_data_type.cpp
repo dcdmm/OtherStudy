@@ -1,8 +1,6 @@
 #include <pybind11/pybind11.h>
 #include <iostream>
 
-namespace py = pybind11;
-
 // python:bool ===> c++:bool
 // python:int ===> c++:short/int/long long
 // python:float ===>  c++:float/double
