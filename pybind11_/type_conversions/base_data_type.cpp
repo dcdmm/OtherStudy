@@ -3,11 +3,11 @@
 
 namespace py = pybind11;
 
-// c++:bool ===> python:bool
-// c++:short/int/long long ===> python:int
-// c++:float/double ===> python:float
-// c++:char */std::string ===> python:str
-// c++:std::nullptr_t ===> None
+// python:bool ===> c++:bool
+// python:int ===> c++:short/int/long long
+// python:float ===>  c++:float/double
+// python:str ===> c++:char */std::string
+// python:None ===> c++:std::nullptr_t
 void bool_(bool i) {
     std::cout << "bool " << i << std::endl;
 }
