@@ -3,7 +3,7 @@
 
 // python:bool ===> c++:bool
 // python:int ===> c++:short/int/long long
-// python:float ===>  c++:float/double
+// python:float ===> c++:float/double
 // python:str ===> c++:char */std::string
 // python:None ===> c++:std::nullptr_t
 void bool_(bool i) {
@@ -46,7 +46,7 @@ void nullptr_(std::nullptr_t) {
    std::cout << "nullptr " << std::endl;
 }
 
-PYBIND11_MODULE(base_data_type, m) {
+PYBIND11_MODULE(automatic_conversion_basic_data_type, m) {
     m.def("bool_", &bool_);
     m.def("short_", &short_);
     m.def("int_", &int_);

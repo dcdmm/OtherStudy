@@ -4,8 +4,8 @@ project(type_conversions)
 
 find_package(pybind11 CONFIG)
 
-pybind11_add_module(base_data_type base_data_type.cpp)
-set_target_properties(base_data_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/base_data_type)
+pybind11_add_module(automatic_conversion_basic_data_type automatic_conversion_basic_data_type.cpp)
+set_target_properties(automatic_conversion_basic_data_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/automatic_conversion_basic_data_type)
 
-pybind11_add_module(stl_type stl_type.cpp)
-set_target_properties(stl_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/stl_type)
+pybind11_add_module(automatic_conversion_stl_type automatic_conversion_stl_type.cpp)
+set_target_properties(automatic_conversion_stl_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/automatic_conversion_stl_type)
