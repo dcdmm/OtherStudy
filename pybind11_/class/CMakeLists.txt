@@ -18,3 +18,6 @@ set_target_properties(class_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE
 
 pybind11_add_module(class_operator_overload class_operator_overload.cpp)
 set_target_properties(class_operator_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_operator_overload)
+
+pybind11_add_module(class_template class_template.cpp)
+set_target_properties(class_template PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_template)
