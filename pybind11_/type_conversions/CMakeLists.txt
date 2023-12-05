@@ -12,3 +12,6 @@ set_target_properties(automatic_conversion_stl_type PROPERTIES LIBRARY_OUTPUT_DI
 
 pybind11_add_module(py_type py_type.cpp)
 set_target_properties(py_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/py_type)
+
+pybind11_add_module(bind bind.cpp)
+set_target_properties(bind PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/bind)
