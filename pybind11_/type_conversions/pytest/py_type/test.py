@@ -2,7 +2,7 @@ import py_type
 
 lst = [1, 2, 3, 4]
 py_type.py_list(lst)
-print(lst, end='\n\n')  # print->[10, 2, 3, 4, -1]
+print(lst, end='\n\n')  # print->[-1111, 999, 2, 3, 4, -1]
 
 dit = {"a": 1, "b": 2, "c": 3, "d": 4}
 py_type.py_dict(dit)

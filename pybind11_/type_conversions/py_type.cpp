@@ -40,6 +40,7 @@ void py_list(py::list i) {
     std::cout << i.empty() << std::endl;
     i.append(-1);
     i[0] = 999; // 更新
+    i.insert(0, -1111); // 插入
 }
 
 void py_dict(py::dict i) {
@@ -55,7 +56,7 @@ void py_set(py::set i) {
     std::cout << i.size() << std::endl;
     std::cout << i.empty() << std::endl;
     std::cout << i.contains("e") << std::endl;
-    i.add("e");
+    i.add("e"); // 添加
 }
 
 PYBIND11_MODULE(py_type, m) {
