@@ -44,21 +44,18 @@ std::set<std::string> py_set(py::set i) {
     std::set<std::string> s = py::cast<std::set<std::string>>(i); // copy operation
     s.insert("e"); // 不会修改python端传入的set中的值
     for (std::string value : s) {
-        std::cout << value << " ";
+        std::cout << value << '\n';
     }
 
     return s;
 }
 
 py::tuple py_tuple(py::tuple i) {
-    std::cout << i.size() << std::endl;
-    std::cout << i.empty() << std::endl;
-    std::cout << py::cast<int>(i[0]) << std::endl; // 索引(不能修改元组元素值)
-    std::cout << "**************************************\n";
     for (auto item: i){
         int item_cpp = py::cast<int>(item);
         std::cout << item_cpp << std::endl;
     }
+
     return i;
 };
 
