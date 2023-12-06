@@ -9,10 +9,8 @@ py_type_ldst.py_dict(dit)
 print(dit, end='\n\n')  # print->{'a': 999, 'b': 2, 'c': 3, 'd': 4, 'e': -1}
 
 set0 = {"a", "b", "c", "d"}
-new_set = py_type_ldst.py_set(set0)
-print(new_set, type(new_set))
+py_type_ldst.py_set(set0)
 print(set0, end='\n\n')  # print->{'c', 'e', 'a', 'd', 'b'}
 
 tup = (1, 2, 3, 4)
-new_tup = py_type_ldst.py_tuple(tup)
-print(new_tup, type(new_tup))
+py_type_ldst.py_tuple(tup)

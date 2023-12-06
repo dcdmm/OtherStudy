@@ -50,12 +50,6 @@ void py_list(py::list i) {
     i[0] = 999; // 修改
     std::cout << py::cast<int>(i[0]) << std::endl; // 索引
     i.insert(0, -1111); // 插入
-    std::cout << "**************************************\n";
-    for (auto item: i){
-        int item_cpp = py::cast<int>(item);
-        std::cout << item_cpp << std::endl;
-    }
-    std::cout << "**************************************\n";
 }
 
 void py_dict(py::dict i) {
@@ -66,13 +60,6 @@ void py_dict(py::dict i) {
     i["e"] = -1; // 修改
     std::cout << py::cast<int>(i["e"]) << std::endl; // 索引
     i["a"] = 999; // 更新
-    std::cout << "**************************************\n";
-    for (auto item: i){
-        std::string key = py::cast<std::string>(item.first); // 转换键
-        int value = py::cast<int>(item.second); // 转换值
-        std::cout << "Key: " << key << ", Value: " << value << std::endl;
-    }
-    std::cout << "**************************************\n";
 }
 
 void py_set(py::set i) {
@@ -81,12 +68,6 @@ void py_set(py::set i) {
     std::cout << i.empty() << std::endl;
     std::cout << i.contains("e") << std::endl;
     i.add("e"); // 添加
-    std::cout << "**************************************\n";
-    for (auto item : i) {
-        std::string item_cpp = py::cast<std::string>(item);
-        std::cout << item_cpp << std::endl;
-    }
-    std::cout << "**************************************\n";
 }
 
 void py_tuple(py::tuple i) {
@@ -94,12 +75,6 @@ void py_tuple(py::tuple i) {
     std::cout << i.size() << std::endl;
     std::cout << i.empty() << std::endl;
     std::cout << py::cast<int>(i[0]) << std::endl; // 索引(不能修改元组元素值)
-    std::cout << "**************************************\n";
-    for (auto item: i){
-        int item_cpp = py::cast<int>(item);
-        std::cout << item_cpp << std::endl;
-    }
-    std::cout << "**************************************\n";
 };
 
 PYBIND11_MODULE(py_type_ldst, m) {
