@@ -6,3 +6,6 @@ find_package(pybind11 CONFIG)
 
 pybind11_add_module(py_type_ldst py_type_ldst.cpp)
 set_target_properties(py_type_ldst PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/py_type_ldst)
+
+pybind11_add_module(cpp_access_python_f cpp_access_python_f.cpp)
+set_target_properties(cpp_access_python_f PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/cpp_access_python_f)
