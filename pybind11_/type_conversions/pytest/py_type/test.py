@@ -16,4 +16,5 @@ print(new_set, type(new_set))
 print(set0, end='\n\n')  # print->{'c', 'e', 'a', 'd', 'b'}
 
 tup = (1, 2, 3, 4)
-py_type.py_tuple(tup)
+new_tup = py_type.py_tuple(tup)
+print(new_tup, type(new_tup))
