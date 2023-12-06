@@ -26,7 +26,7 @@ void print_vector(std::vector<int>& i) { // a fundamental limitation of this app
         std::cout << value << " ";
     } // print->1 2 3 4 5
 
-    i.push_back(-1);
+    i.push_back(-1); // 不会修改python端传入的list中的值
     std::cout << std::endl;
 
     for (int value : i) {
