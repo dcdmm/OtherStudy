@@ -13,7 +13,7 @@ void process_custom_class(py::object point) {
 }
 
 void process_list(py::list lst0, py::list lst1) {
-    py::print("init lst0", lst0);
+    py::print("init lst0", lst0); // 打印pyton对象,等价于python端print(lst0)
     lst0.attr("append")(-1); // list内置方法
     py::print("append lst0", lst0);
     lst0.attr("extend")(lst1);
