@@ -24,7 +24,7 @@ struct PolymorphicDog : PolymorphicPet { //
 };
 
 
-PYBIND11_MODULE(class_polymorphic, m) {
+PYBIND11_MODULE(class_inherit_polymorphic, m) {
     py::class_<Pet>(m, "Pet")
             .def(py::init<const std::string &>())
             .def_readwrite("name", &Pet::name);
