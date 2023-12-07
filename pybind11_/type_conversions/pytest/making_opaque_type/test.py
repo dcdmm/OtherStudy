@@ -1,7 +1,19 @@
-import making_opaque_type
+from making_opaque_type import StringList, print_opaque_list, ClassWithSTLVecProperty
 
-lst = making_opaque_type.StringList()
+lst = StringList()
+print(type(lst))
+print(lst.__len__())
 lst.push_back("Element 1")
 lst.push_back("Element 2")
+print(print_opaque_list(lst))
+lst.pop_back()
+print(print_opaque_list(lst))
 
-print(making_opaque_type.print_opaque_list(lst))
+cvp = ClassWithSTLVecProperty()
+print(print_opaque_list(cvp.stringList))
+cvp.stringList = lst
+print(print_opaque_list(cvp.stringList))
+cvp.stringList.push_back("Element 3")
+print(print_opaque_list(cvp.stringList))
+print(type(cvp.stringList))
+print(cvp.stringList)
