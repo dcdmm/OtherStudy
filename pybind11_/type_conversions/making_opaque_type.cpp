@@ -1,10 +1,11 @@
 #include <pybind11/pybind11.h>
 #include <vector>
 #include <string>
+
 namespace py = pybind11;
 
 // Disable internal pybind11 translation mechanisms for STL data structures
- PYBIND11_MAKE_OPAQUE(std::vector<std::string>);
+PYBIND11_MAKE_OPAQUE(std::vector<std::string>); // 即禁用python:List[str] <===> std::vector<std::string>之间的自动类型转换机制
 
 using StringList = std::vector<std::string>; // 类型别名
 

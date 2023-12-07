@@ -17,9 +17,9 @@
 
 namespace py = pybind11;
 
-// python:List[int] ===> c++:std::vector<int>/std::deque<int>/std::list<int>/std::array<int, len(List[int])>/std::valarray<int>
-// python:Dict[str, int] ===> std::map<std::string, int>
-// python:Set[int] ===> c++:std::set<int>
+// python:List[int] <===> c++:std::vector<int>/std::deque<int>/std::list<int>/std::array<int, len(List[int])>/std::valarray<int>
+// python:Dict[str, int] <===> std::map<std::string, int>
+// python:Set[int] <===> c++:std::set<int>
 void print_vector(std::vector<int>& i) { // a fundamental limitation of this approach is that internal conversions between Python and C++ types involve a copy operation that prevents pass-by-reference semantics.
     std::cout << "std::vector<int>" << std::endl;
     for (int value : i) {

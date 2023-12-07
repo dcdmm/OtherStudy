@@ -1,11 +1,11 @@
 #include <pybind11/pybind11.h>
 #include <iostream>
 
-// python:bool ===> c++:bool
-// python:int ===> c++:short/int/long long
-// python:float ===> c++:float/double
-// python:str ===> c++:char */std::string
-// python:None ===> c++:std::nullptr_t
+// python:bool <===> c++:bool
+// python:int <===> c++:short/int/long long
+// python:float <===> c++:float/double
+// python:str <===> c++:char */std::string
+// python:None <===> c++:std::nullptr_t
 void bool_(bool i) {
     std::cout << "bool " << i << std::endl;
 }

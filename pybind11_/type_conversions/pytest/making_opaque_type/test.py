@@ -11,6 +11,8 @@ print(print_opaque_list(lst))
 
 cvp = ClassWithSTLVecProperty()
 print(print_opaque_list(cvp.stringList))
+# 已禁用python:List[str] <===> std::vector<std::string>之间的自动类型转换机制
+cvp.stringList.append("hello java?")  # 报错:AttributeError: 'making_opaque_type.StringList' object has no attribute 'append'
 cvp.stringList = lst
 print(print_opaque_list(cvp.stringList))
 cvp.stringList.push_back("Element 3")
