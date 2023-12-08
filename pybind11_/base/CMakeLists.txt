@@ -9,8 +9,9 @@ project(base)
 find_package(pybind11 CONFIG) # 与上等价
 
 pybind11_add_module(base base.cpp)
-
 # 指定动态库生成路径
-set_target_properties(base
-        PROPERTIES
-        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest)
+set_target_properties(base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest)
+
+pybind11_add_module(benchmark benchmark.cpp)
+# 指定动态库生成路径
+set_target_properties(benchmark PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest)
