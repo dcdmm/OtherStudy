@@ -36,5 +36,5 @@ v_int.remove(-1)
 print(v_int)  # print->VectorInt[-2, -3, -1]
 
 
-v_int.modify_and_pop_back(10)
+v_int.pop_back()
 print(v_int)
