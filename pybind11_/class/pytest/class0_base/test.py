@@ -9,6 +9,16 @@ print(c_py)
 
 print("*" * 100)
 
+print(c.is_cpp("hello c"))  # 类方法(第一个参数为self,self表示实例本身)
+print(c.is_cpp("hello c++"))
+print(c_py.is_cpp("hello c"))
+print(c_py.is_cpp("hello c++"))
+
+print(class0_base.is_cpp(c, "hello c"))
+print(class0_base.is_cpp(c, "hello c++"))
+
+print('*' * 100)
+
 print(c.getName())
 print(c_py.getName())
 

@@ -13,5 +13,8 @@ find_package(pybind11 CONFIG)
 #pybind11_add_module(cast_py_type cast_py_type.cpp)
 #set_target_properties(cast_py_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/cast_py_type)
 
-pybind11_add_module(making_opaque_type making_opaque_type.cpp)
-set_target_properties(making_opaque_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/making_opaque_type)
+#pybind11_add_module(making_opaque_type making_opaque_type.cpp)
+#set_target_properties(making_opaque_type PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/making_opaque_type)
+
+pybind11_add_module(bind_stl bind_stl.cpp)
+set_target_properties(bind_stl PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/bind_stl)

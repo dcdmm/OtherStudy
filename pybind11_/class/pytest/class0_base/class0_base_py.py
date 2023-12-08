@@ -13,6 +13,12 @@ class Pet:
     def __repr__(self):
         return "<example.Pet named '" + self.name + "'>"
 
+    def is_cpp(self, is_cpp): # 第一个参数为self,self表示实例本身
+        if self.name == is_cpp:
+            return True
+        else:
+            return False
+
     @staticmethod
     def howAge():
         return Pet.age
