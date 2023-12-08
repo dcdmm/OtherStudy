@@ -55,13 +55,13 @@ PYBIND11_MODULE(class0_base, m) {
              *         return False
              */
             // 与上python类中的类方法等价
-            .def("is_cpp", &is_cpp) // c++独立函数:需指定Pet &p表示实例本身(即python类方法中的self)
+            .def("is_cpp", &is_cpp) // c++独立函数:第一个参数必须为Pet &p表示实例本身(即python类方法中的self)
             /*
              * def __repr__(self)
              *     return "<example.Pet named '" + self.name + "'>"
              */
             // 与上python类中的类方法等价
-            .def("__repr__", [](const Pet &a) {return "<example.Pet named '" + a.name + "'>";}) // c++独立(lambda)函数:需指定const Pet &a表示实例本身(即python类方法中的self)
+            .def("__repr__", [](const Pet &a) {return "<example.Pet named '" + a.name + "'>";}) // c++独立(lambda)函数:第一个参数必须为const Pet &a表示实例本身(即python类方法中的self)
 
             .def_static("howAge", &Pet::howAge) // 绑定python 静态方法
             .def_readwrite_static("age", &Pet::age) // 绑定python 类属性(python类属性是静态变量)

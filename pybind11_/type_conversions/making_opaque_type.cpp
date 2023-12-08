@@ -16,7 +16,7 @@ public:
 
 PYBIND11_MODULE(making_opaque_type, m) {
     py::class_<StringList>(m, "StringList")
-            .def(py::init<>())
+            .def(py::init<>()) // 可通过自定义构造函数,支持传入python list
             .def("pop_back", &StringList::pop_back)
             .def("push_back", (void(StringList::*)(const std::string &)) & StringList::push_back)
             .def("back", (std::string & (StringList::*) ()) & StringList::back) // 存在函数重载;使用指向成员函数的指针

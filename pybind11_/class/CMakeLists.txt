@@ -4,26 +4,26 @@ project(class)
 
 find_package(pybind11 CONFIG)
 
-#pybind11_add_module(class0_base class0_base.cpp)
-#set_target_properties(class0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class0_base)
-#
-#pybind11_add_module(class_get_set class_get_set.cpp)
-#set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_get_set)
-#
-#pybind11_add_module(class_inherit_polymorphic class_inhert_polymorphic.cpp)
-#set_target_properties(class_inherit_polymorphic PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_inherit_polymorphic)
-#
-#pybind11_add_module(class_overload class_overload.cpp)
-#set_target_properties(class_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_overload)
-#
-#pybind11_add_module(class_operator_overload class_operator_overload.cpp)
-#set_target_properties(class_operator_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_operator_overload)
-#
-#pybind11_add_module(class_template class_template.cpp)
-#set_target_properties(class_template PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_template)
-#
-#pybind11_add_module(class_has_a_combination class_has_a_combination.cpp)
-#set_target_properties(class_has_a_combination PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_has_a_combination)
+pybind11_add_module(class0_base class0_base.cpp)
+set_target_properties(class0_base PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class0_base)
+
+pybind11_add_module(class_get_set class_get_set.cpp)
+set_target_properties(class_get_set PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_get_set)
+
+pybind11_add_module(class_inherit_polymorphic class_inhert_polymorphic.cpp)
+set_target_properties(class_inherit_polymorphic PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_inherit_polymorphic)
+
+pybind11_add_module(class_overload class_overload.cpp)
+set_target_properties(class_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_overload)
+
+pybind11_add_module(class_operator_overload class_operator_overload.cpp)
+set_target_properties(class_operator_overload PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_operator_overload)
+
+pybind11_add_module(class_template class_template.cpp)
+set_target_properties(class_template PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_template)
+
+pybind11_add_module(class_has_a_combination class_has_a_combination.cpp)
+set_target_properties(class_has_a_combination PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_has_a_combination)
 
 pybind11_add_module(class_custom_init class_custom_init.cpp)
 set_target_properties(class_custom_init PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytest/class_custom_init)
