@@ -36,6 +36,7 @@ struct Pet_dyn {
 
 PYBIND11_MODULE(class0_base, m) {
     py::class_<Pet>(m, "Pet")
+            // init() is a convenience function that takes the types of a constructor’s parameters as template arguments and wraps the corresponding constructor (s
             .def(py::init<const std::string &>()) // 绑定python __init__函数
 
             /*
