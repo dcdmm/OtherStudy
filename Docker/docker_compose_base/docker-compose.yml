@@ -2,7 +2,7 @@
 
 version: "3.8"
 services:
-  mysql:  # 容器名称自动生成为:docker_compose_base-mysql-1
+  mysql: # 容器名称自动生成为:docker_compose_base-mysql-1
     # Specify the image to start the container from. Can either be a repository/tag or a partial image ID.
     image: mysql:5.7
     # Override the default command.
@@ -61,6 +61,14 @@ volumes:
   data01:
   data02:
 
-# Specify custom networks🔗
+# Specify custom networks
 networks:
-  overlay:
+  overlay:  # 创建名为docker_compose_base_overlay的网络
+
+## Use a pre-existing network
+#networks:
+#  overlay:
+#    # If set to true:
+#    # * external specifies that this network’s lifecycle is maintained outside of that of the application. Compose doesn't attempt to create these networks, and returns an error if one doesn't exist.
+#    # * All other attributes apart from name are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.
+#    external: true
