@@ -19,11 +19,12 @@ services:
     # Mount host paths or named volumes, specified as sub-options to a service.
     # You can mount a host path as part of a definition for a single service, and there is no need to define it in the top level volumes key.
     # But, if you want to reuse a volume across multiple services, then define a named volume in the top-level volumes key. Use named volumes with services, swarms, and stack files.
+    # 对应:docker run -v
     volumes:
       # Specify an absolute path mapping
-      # 对应:docker run -v
-      - /root/mysqldatas:/var/lib/mysql
+      - ./volumes/mysql:/var/lib/mysql  # .:docker-compose.yml文件所在目录
     # Networks to join, referencing entries under the top-level networks key.
+    # 对应:docker run --network
     networks:
       - overlay
 
@@ -56,12 +57,13 @@ services:
       - overlay
 
 # creates a volume
-# Inspect a volume:`docker volume inspect docker_compose_base_data01`
+# 对应:docker volume create
 volumes:
-  data01:
+  data01:  # 创建名为docker volume inspect docker_compose_base_data01的volume
   data02:
 
 # Specify custom networks
+# 对应:docker network create
 networks:
   overlay:  # 创建名为docker_compose_base_overlay的网络
 
