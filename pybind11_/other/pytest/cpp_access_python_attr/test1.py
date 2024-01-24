@@ -1,4 +1,4 @@
-import cpp_access_python_c
+import cpp_access_python_attr
 
 lst0 = [1, 2, 3]
 lst1 = ["a", "b"]
