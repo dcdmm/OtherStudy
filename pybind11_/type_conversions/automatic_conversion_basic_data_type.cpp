@@ -4,7 +4,7 @@
 // python:bool <===> c++:bool
 // python:int <===> c++:short/int/long long
 // python:float <===> c++:float/double
-// python:str <===> c++:char */std::string
+// python:str <===> c++:char */std::string/std::wstring/char/wchar_t
 // python:None <===> c++:std::nullptr_t
 void bool_(bool i) {
     std::cout << "bool " << i << std::endl;
