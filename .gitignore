@@ -2,14 +2,19 @@
 ### Example user template template
 ### Example user template
 # IntelliJ project files
-*.idea
+
+debug/
+target/
+build
+
+.idea
+.vscode
+
+Cargo.lock
 
 .ipynb_checkpoints
 
 # *.pyc文件是.py文件编译后生成的字节码文件(byte code),类似Java的.class文件
 *.pyc
 
-build
-
-pybind11
 
