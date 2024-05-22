@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 
+// 还可以应用于enum variant(作用与应用于结构体字段类型类似)
 #[test]
 fn rename_test() {
     #[derive(Serialize, Deserialize, Debug)]
@@ -64,4 +65,42 @@ fn default_test() {
 }
 
 #[test]
-fn flatten_test() {}
+fn flatten_test() {
+    #[derive(Serialize, Deserialize, Debug)]
+    struct ExtraInfo {
+        email: String,
+        phone: String,
+    }
+
+    #[derive(Serialize, Deserialize, Debug)]
+    struct User {
+        id: i32,
+        name: String,
+        // Flatten the contents of this field into the container it is defined in.
+        #[serde(flatten)]
+        extra: ExtraInfo,
+    }
+
+    let user = User {
+        id: 1,
+        name: String::from("Alice"),
+        extra: ExtraInfo {
+            email: String::from("alice@example.com"),
+            phone: String::from("123-456-7890"),
+        },
+    };
+
+    // extra字段未添加#[serde(flatten)]时打印为: {"id":1,"name":"Alice","extra":{"email":"alice@example.com","phone":"123-456-7890"}}
+    let serialized = serde_json::to_string(&user).unwrap();
+    println!("{}", serialized); // print->{"id":1,"name":"Alice","email":"alice@example.com","phone":"123-456-7890"}
+
+    let json_data = r#"{
+        "id": 1,
+        "name": "Alice",
+        "email": "alice@example.com",
+        "phone": "123-456-7890"
+    }"#;
+
+    let deserialized: User = serde_json::from_str(json_data).unwrap();
+    println!("{:?}", deserialized); // print->User { id: 1, name: "Alice", extra: ExtraInfo { email: "alice@example.com", phone: "123-456-7890" } }
+}

@@ -18,7 +18,7 @@ fn t0() {
     println!("serialized = {}", serialized); // print->serialized = {"x":1,"y":2}
 
     // Convert the JSON string back to a Point.
-    let deserialized: Point = serde_json::from_str(&serialized).unwrap();
+    let deserialized: Point = serde_json::from_str(&serialized).unwrap(); // 必须显式指定类型反序列化后的类型
 
     println!("deserialized = {:?}", deserialized); // print->deserialized = Point { x: 1, y: 2 }
 }
