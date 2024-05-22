@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+// 序列化trait: Serialize
+// 反序列化trait: Deserialize
 #[derive(Serialize, Deserialize, Debug)]
 struct Point {
     x: i32,
