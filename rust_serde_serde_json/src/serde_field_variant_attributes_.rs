@@ -104,3 +104,38 @@ fn flatten_test() {
     let deserialized: User = serde_json::from_str(json_data).unwrap();
     println!("{:?}", deserialized); // print->User { id: 1, name: "Alice", extra: ExtraInfo { email: "alice@example.com", phone: "123-456-7890" } }
 }
+
+// 还可以应用于enum variant(作用与应用于结构体字段类型类似)
+#[test]
+fn skip_test() {
+    #[derive(Serialize, Deserialize, Debug)]
+    struct User {
+        id: i32,
+        /*
+        Skip this field: do not serialize or deserialize it.
+
+        When deserializing, Serde will use Default::default() or the function given by default = "..." to get a default value for this field.
+         */
+        #[serde(skip, default = "default_name")]
+        name: String,
+        #[serde(skip)]
+        debug_info: String,
+    }
+
+    fn default_name() -> String {
+        String::from("dmm")
+    }
+
+    let user = User {
+        id: 1,
+        name: String::from("Alice"),
+        debug_info: String::from("This is debug information that should not be serialized."),
+    };
+
+    let serialized = serde_json::to_string(&user).unwrap();
+    println!("{}", serialized); // pirnt->{"id":1}
+
+    let json_data = r#"{"id": 2, "name": "Bob"}"#;
+    let deserialized: User = serde_json::from_str(json_data).unwrap();
+    println!("{:?}", deserialized); // print->User { id: 2, name: "dmm", debug_info: "" }
+}
