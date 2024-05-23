@@ -1,3 +1,5 @@
+// 参考文档: https://serde.rs/data-model.html
+
 use serde::{Deserialize, Serialize};
 
 // 序列化trait: Serialize
