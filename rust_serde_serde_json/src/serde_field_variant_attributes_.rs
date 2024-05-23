@@ -1,3 +1,5 @@
+// Variant attributes/Field attributes
+
 use serde::{Deserialize, Serialize};
 
 // 还可以应用于enum variant(作用与应用于结构体字段类型类似)
