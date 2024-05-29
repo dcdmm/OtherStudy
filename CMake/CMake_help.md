@@ -23,16 +23,16 @@
     * Path to directory which CMake will use as the root of build directory.
     * If the directory doesn't already exist CMake will make it. If the directory doesn't already exist CMake will make it.
 
-  | Command Line             | Source Dir | Build Dir |
-                |:-------------------------|:-----------|:----------|
-  | `cmake -B build`         | cwd        | `build`   |
-  | `cmake -B build src`     | `src`      | `build`   |
-  | `cmake -B build -S src`  | `src`      | `build`   |
-  | `cmake src`              | `src`      | cwd       |
-  | `cmake build` (existing) | loaded     | `build`   |
-  | `cmake -S src`           | `src`      | cwd       |
-  | `cmake -S src build`     | `src`      | `build`   |
-  | `cmake -S src -B build`  | `src`      | `build`   |
+    | Command Line             | Source Dir | Build Dir |
+    |:-------------------------|:-----------|:----------|
+    | `cmake -B build`         | cwd        | `build`   |
+    | `cmake -B build src`     | `src`      | `build`   |
+    | `cmake -B build -S src`  | `src`      | `build`   |
+    | `cmake src`              | `src`      | cwd       |
+    | `cmake build` (existing) | loaded     | `build`   |
+    | `cmake -S src`           | `src`      | cwd       |
+    | `cmake -S src build`     | `src`      | `build`   |
+    | `cmake -S src -B build`  | `src`      | `build`   |
 
 * -G <generator-name>
     * Specify a build system generator.
@@ -103,25 +103,24 @@
 
 * get_target_property
     ```markdown
-  Get a property from a target.
-  
-  `get_target_property(<VAR> target property)`
-  
-  Get a property from a target. The value of the property is stored in the variable <VAR>.
+    Get a property from a target.
+    
+    `get_target_property(<VAR> target property)`
+    
+    Get a property from a target. The value of the property is stored in the variable <VAR>.
     ```
-
-  * 使用参考:c_target_include_directories0
+    * 使用参考:c_target_include_directories0
 
 
 * get_directory_property
-  ```markdown
-  Get a property of DIRECTORY scope.
-  
-  `get_directory_property(<variable> [DIRECTORY <dir>] <prop-name>)`
-  
-  Stores a property of directory scope in the named <variable>.
-  
-  The DIRECTORY argument specifies another directory from which to retrieve the property value instead of the current directory. 
-  Relative paths are treated as relative to the current source directory. 
-  ```
-  * 使用参考:c_target_compile_definition0
+    ```markdown
+    Get a property of DIRECTORY scope.
+
+    `get_directory_property(<variable> [DIRECTORY <dir>] <prop-name>)`
+
+    Stores a property of directory scope in the named <variable>.
+
+    The DIRECTORY argument specifies another directory from which to retrieve the property value instead of the current directory. 
+    Relative paths are treated as relative to the current source directory. 
+    ```
+    * 使用参考:c_target_compile_definition0
