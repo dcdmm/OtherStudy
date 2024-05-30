@@ -3,7 +3,7 @@ import time
 import base
 
 
-print(base.__doc__)  # print->base doc
+print(base.__doc__)  # print->Rust函数文档注释
 
 
 def sum_py(n):

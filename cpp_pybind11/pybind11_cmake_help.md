@@ -14,8 +14,8 @@
     进入python base/虚拟环境(不同环境的cpython版本不同)
     
     如:
-        * base环境python版本为3.11.12,base环境下编译的动态库文件为base.cpython-311-x86_64-linux-gnu.so
-        * job虚拟环境python版本为3.10.12,job环境下编译的动态库文件为base.cpython-310-x86_64-linux-gnu.so
+        * base环境python版本为3.11.12,base环境下编译的动态库文件为base.cpython-311-x86_64-linux-gnu.so(仅适用于cpython3.11)
+        * job虚拟环境python版本为3.10.12,job环境下编译的动态库文件为base.cpython-310-x86_64-linux-gnu.so(仅适用于cpython3.10)
     ```
     
 * step 2

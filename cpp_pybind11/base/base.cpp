@@ -2,5 +2,5 @@
 
 // python模块名为base
 PYBIND11_MODULE(base, m) {
-    m.doc() = "base doc";  // 绑定python模块文档
+    m.doc() = "base doc";  // 绑定python模块文档字符串
 }
