@@ -1,3 +1,5 @@
+mod signatures;
+
 use pyo3::prelude::*;
 
 #[pyfunction]
@@ -15,5 +17,6 @@ fn no_args_py() -> usize {
 fn func(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(double, m)?)?;
     m.add_function(wrap_pyfunction!(no_args_py, m)?)?;
+    m.add_function(wrap_pyfunction!(signatures::new, m)?)?;
     Ok(())
 }
