@@ -14,7 +14,7 @@ pub fn args_para(num0: i32, py_args: &Bound<'_, PyTuple>) {
 }
 
 #[pyfunction]
-#[pyo3(signature = (num0, *py_kwargs))]
+#[pyo3(signature = (num0, **py_kwargs))]
 pub fn kwargs(num0: i32, py_kwargs: Option<&Bound<'_, PyDict>>) {
 
 }
