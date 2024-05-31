@@ -1,13 +1,13 @@
 import time
 
 import base
-from base import child  # 导入子模块
+from base import child_module  # 导入子模块
 
 print(base.__doc__)  # print->Rust函数文档注释
 
 print(base.triple(100))  # print->300
 
-print(child.double(100))  # print->200
+print(child_module.double(100))  # print->200
 
 
 def sum_py(n):

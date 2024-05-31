@@ -43,7 +43,7 @@ void std_string_(std::string i) {
 }
 
 void nullptr_(std::nullptr_t) {
-   std::cout << "nullptr " << std::endl;
+    std::cout << "nullptr " << std::endl;
 }
 
 PYBIND11_MODULE(automatic_conversion_basic_data_type, m) {

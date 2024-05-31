@@ -11,7 +11,7 @@ pub fn triple(x: usize) -> usize {
 }
 
 #[pymodule]
-pub fn child(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
+pub fn child_module(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(double, m)?)?;
     Ok(())
 }
