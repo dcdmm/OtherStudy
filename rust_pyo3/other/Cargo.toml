@@ -9,4 +9,4 @@ name = "other"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.21"
+pyo3 = {version = "0.21", features = ["auto-initialize"]}

@@ -14,6 +14,8 @@ fn sum_rust(n: i64) -> i64 {
     result
 }
 
+// python模块名为该函数名(即base)
+// 模块文档字符串为该函数文档注释(即"Rust函数文档注释")
 /// Rust函数文档注释
 #[pymodule]
 // 函数名称对应该rust项目包名(即base,见Cargo.toml [package] name)
@@ -24,6 +26,3 @@ fn base(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
     m.add_wrapped(wrap_pymodule!(other::child_module))?; // 添加子模块
     Ok(())
 }
-
-// python模块名为该函数名(即base)
-// 模块文档字符串为该函数文档注释(即"Rust函数文档注释")
