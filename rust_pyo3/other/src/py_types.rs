@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
 use pyo3::types::*;
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyString_test() {
     Python::with_gil(|py| {
@@ -19,6 +20,7 @@ fn PyString_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyBool_test() {
     Python::with_gil(|py| {
@@ -32,6 +34,7 @@ fn PyBool_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyLong_test() {
     Python::with_gil(|py| {
@@ -48,6 +51,7 @@ fn PyLong_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyFloat_test() {
     Python::with_gil(|py| {
@@ -63,6 +67,7 @@ fn PyFloat_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyList_test() {
     Python::with_gil(|py| {
@@ -121,6 +126,7 @@ fn PyList_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyTuple_test() {
     Python::with_gil(|py| {
@@ -163,6 +169,7 @@ fn PyTuple_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PyDict_test() {
     Python::with_gil(|py| {
@@ -222,6 +229,7 @@ fn PyDict_test() {
     })
 }
 
+// Methods from Deref<Target = PyAny>
 #[test]
 fn PySet_test() {
     Python::with_gil(|py| {
