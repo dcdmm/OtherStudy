@@ -19,7 +19,14 @@ fn sum_rust(n: i64) -> i64 {
 /// Rust函数文档注释
 #[pymodule]
 // 函数名称对应该rust项目包名(即base,见Cargo.toml [package] name)
-fn base(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
+/*
+Type Alias pyo3::PyResult
+
+`pub type PyResult<T> = Result<T, PyErr>;`
+
+sents the result of a Python call.
+*/
+fn base(_py: Python, m: &Bound<PyModule>) -> PyResult<()> { 
     m.add_function(wrap_pyfunction!(sum_rust, m)?)?;
     m.add_function(wrap_pyfunction!(other::triple, m)?)?;
 
