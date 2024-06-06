@@ -41,9 +41,15 @@ fn PyAny0() -> PyResult<()> {
 }
 
 #[test]
-fn PyAny_call0() -> PyResult<()> {
+fn PyAny_call0_attr() -> PyResult<()> {
     Python::with_gil(|py| -> PyResult<()> {
         let module = PyModule::import_bound(py, "builtins")?;
+
+        /*
+        Retrieves an attribute value.
+
+        This is equivalent to the Python expression self.attr_name.
+         */
         let help = module.getattr("help")?;
 
         // Calls the object without arguments. This is equivalent to the Python expression self().
