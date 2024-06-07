@@ -1,3 +1,9 @@
+/*
+Represents any Python object.
+
+It currently only appears as a reference, &PyAny, with a lifetime that represents the scope during which the GIL is held.
+*/
+
 use pyo3::prelude::*;
 use pyo3::types::*;
 use std::collections::HashMap;
@@ -5,12 +11,6 @@ use std::collections::HashMap;
 #[test]
 fn PyAny0() -> PyResult<()> {
     Python::with_gil(|py| {
-        /*
-        Represents any Python object.
-
-        It currently only appears as a reference, &PyAny, with a lifetime that represents the scope during which the GIL is held.
-         */
-
         let py_dict = PyDict::new_bound(py);
         py_dict.set_item("a", 1);
 

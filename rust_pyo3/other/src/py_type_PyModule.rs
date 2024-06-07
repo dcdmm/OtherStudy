@@ -1,15 +1,15 @@
+/*
+Represents a Python module object.
+
+As with all other Python objects, modules are first class citizens. This means they can be passed to or returned from functions, created dynamically, assigned to variables and so forth.
+*/
+
 use pyo3::prelude::*;
 
 // Methods from Deref<Target = PyAny>
 #[test]
 fn t0() {
     Python::with_gil(|py| {
-        /*
-        Represents a Python module object.
-
-        As with all other Python objects, modules are first class citizens. This means they can be passed to or returned from functions, created dynamically, assigned to variables and so forth.
-         */
-
         // Creates a new module object with the __name__ attribute set to name.
         let module = PyModule::new_bound(py, "my_module").unwrap();
         println!("{:?}", module.name()); // print->Ok('my_module')
