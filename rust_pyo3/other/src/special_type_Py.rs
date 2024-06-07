@@ -9,6 +9,12 @@ This type does not auto-dereference to the inner object because you must prove y
 
 // PyObject: An alias for Py<PyAny>
 
+// # Trait Implementations
+/*
+impl<T> Drop for Py<T>
+    Dropping a Py instance decrements the reference count on the object by 1.
+*/
+
 use pyo3::prelude::*;
 use pyo3::types::*;
 

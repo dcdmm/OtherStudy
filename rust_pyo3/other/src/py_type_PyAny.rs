@@ -22,9 +22,6 @@ fn PyAny0() -> PyResult<()> {
         println!("{}", py_dict.is_instance_of::<PyAny>()); // print->true
 
         let py_any = py_dict.as_any();
-        
-        // Returns a GIL marker constrained to the lifetime of this type.
-        let python_ = py_any.py();
 
         // Downcast this PyAny to a concrete Python type or pyclass.
         println!("{:?}", py_any.downcast::<PyDict>()); // print->Ok({})
