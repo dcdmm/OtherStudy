@@ -9,7 +9,7 @@ use pyo3::types::*;
 use std::collections::HashMap;
 
 #[test]
-fn PyAny0() -> PyResult<()> {
+fn PyAny_cast_type() -> PyResult<()> {
     Python::with_gil(|py| {
         let py_dict = PyDict::new_bound(py);
         py_dict.set_item("a", 1);

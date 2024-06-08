@@ -83,7 +83,7 @@ fn Py_bind_borrow() {
     Python::with_gil(|py| {
         let foo: Py<Foo> = Py::new(py, Foo { inner: 73 }).unwrap();
 
-        // Attaches this Py to the given Python context, allowing access to further Python APIs.
+        // bind: Attaches this Py to the given Python context, allowing access to further Python APIs.
         let b_ = foo.bind(py).borrow();
         /*
         Immutably borrows the value T.
@@ -101,7 +101,7 @@ fn Py_bind_borrow() {
 fn Py_clone() {
     Python::with_gil(|py| {
         let first = PyDict::new_bound(py).unbind();
-
+        
         // All of these are valid syntax
         let fourth = Py::clone(&first);
         let second = Py::clone_ref(&first, py);
@@ -117,3 +117,4 @@ fn Py_clone() {
         println!("{}", second.is(&fifth)); // print->true
     });
 }
+
