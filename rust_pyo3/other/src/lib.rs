@@ -7,6 +7,7 @@ mod py_types;
 mod special_type_Bound;
 mod special_type_Py;
 mod special_type_Python;
+mod special_type_PyRef;
 
 use pyo3::prelude::*;
 

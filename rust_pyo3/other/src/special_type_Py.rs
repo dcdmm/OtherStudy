@@ -75,7 +75,7 @@ fn Py_new_as_ref() {
 }
 
 #[test]
-fn Py_borrow() {
+fn Py_bind_borrow() {
     #[pyclass]
     struct Foo {
         inner: u8,
@@ -83,13 +83,16 @@ fn Py_borrow() {
     Python::with_gil(|py| {
         let foo: Py<Foo> = Py::new(py, Foo { inner: 73 }).unwrap();
 
+        // Attaches this Py to the given Python context, allowing access to further Python APIs.
+        let b_ = foo.bind(py).borrow();
         /*
         Immutably borrows the value T.
 
         This borrow lasts while the returned PyRef exists. Multiple immutable borrows can be taken out at the same time.
          */
-        let inner: &u8 = &foo.borrow(py).inner;
-        println!("{:?}", *inner);
+        let b = foo.borrow(py); // 与上等价
+        let i: &u8 = &b.inner;
+        println!("{:?}", *i);
     });
 }
 

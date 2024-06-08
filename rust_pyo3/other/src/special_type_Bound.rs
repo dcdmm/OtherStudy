@@ -7,8 +7,6 @@ impl<'py, T> Deref for Bound<'py, T> where T: DerefToPyAny,
 impl<T> Drop for Bound<'_, T>
 */
 
-use std::borrow::Borrow;
-
 use pyo3::prelude::*;
 use pyo3::types::*;
 
@@ -29,10 +27,10 @@ fn t1() {
 
         // Returns the GIL token associated with this object.
         let python_ = d.py();
+
         // Helper to cast to Bound<'py, PyAny>.
         let pyany_ = d.as_any();
-        // Helper to cast to Bound<'py, PyAny>, transferring ownership.
-        let borrowed_ = d.as_borrowed();
+
         // Removes the connection for this Bound<T> from the GIL, allowing it to cross thread boundaries.
         let py_ = d.unbind();
     })
