@@ -90,19 +90,16 @@ fn PyList_test() {
 
         // Appends an item to the list.
         l1.append("one");
-        println!("{:?}", l1);
+        println!("{:?}", l1); // print->[0, 1, 2, 3, 4, 5, 'one']
+
         // Inserts an item at the specified index.
         l1.insert(1, false);
-        println!("{:?}", l1);
+        println!("{:?}", l1); // print->[0, False, 1, 2, 3, 4, 5, 'one']
 
         // Returns the first index i for which self[i] == value.
         let i = l1.index(5);
         println!("{:?}", i); // print->Ok(6)
         println!("{:?}", l1.index(199)); // print->Err(PyErr { type: <class 'ValueError'>, value: ValueError('sequence.index(x): x not in sequence'), traceback: None })
-
-        // Return a new tuple containing the contents of the list; equivalent to the Python expression tuple(list).
-        let t = l1.to_tuple();
-        println!("{:?}", t); // pirnt->(0, False, 1, 2, 3, 4, 5, 'one')
 
         // Deletes the indexth element of self. This is equivalent to the Python statement del self[i].
         l1.del_item(0);
@@ -110,8 +107,16 @@ fn PyList_test() {
 
         // Deletes the slice from low to high from self. This is equivalent to the Python statement del self[low:high].
         l1.del_slice(4, 6);
-        println!("{:?}", l1); // print->False, 1, 2, 3, 'one']
+        println!("{:?}", l1); // print->[False, 1, 2, 3, 'one']
 
+        // Gets the list item at the specified index. Undefined behavior on bad index. Use with caution.
+        let gi_v = l1.get_item(1).unwrap();
+        println!("{:?}", gi_v); // print->1
+
+        // Sets the item at the specified index. Raises IndexError if the index is out of range.
+        l1.set_item(1, -1);
+        println!("{:?}", l1); // print->[False, -1, 2, 3, 'one']
+        
         /*
         Determines if self contains value.
 
@@ -120,9 +125,14 @@ fn PyList_test() {
         println!("{:?}", l1.contains(3)); // Ok(true)
         println!("{:?}", l1.contains("w")); // Ok(false)
 
+        // Return a new tuple containing the contents of the list; equivalent to the Python expression tuple(list).
+        let t = l1.to_tuple();
+        println!("{:?}", t); // pirnt->(False, -1, 2, 3, 'one')
+
         for x in l1 {
             println!("{}", x);
         }
+
     })
 }
 
@@ -151,9 +161,8 @@ fn PyTuple_test() {
         let t1 = PyTuple::new_bound(py, elements);
         println!("{}", t1); // print->(0, 1, 2, 3, 4, 5)
 
-        // Return a new list containing the contents of this tuple; equivalent to the Python expression list(tuple).
-        let l = t1.to_list();
-        println!("{:?}", l); // print->[0, 1, 2, 3, 4, 5]
+        let gi_v = t1.get_item(0).unwrap();
+        println!("{:?}", gi_v); // print->0
 
         /*
         Determines if self contains value.
@@ -162,6 +171,10 @@ fn PyTuple_test() {
          */
         println!("{:?}", t1.contains(3)); // Ok(true)
         println!("{:?}", t1.contains("w")); // Ok(false)
+
+        // Return a new list containing the contents of this tuple; equivalent to the Python expression list(tuple).
+        let l = t1.to_list();
+        println!("{:?}", l); // print->[0, 1, 2, 3, 4, 5]
 
         for x in t1 {
             println!("{}", x);
@@ -195,21 +208,21 @@ fn PyDict_test() {
         println!("{:?}", d.get_item("a")); // print->Ok(Some(1))
         println!("{:?}", d.get_item("d")); // print->Ok(None)
 
-        // Returns a list of dict keys. This is equivalent to the Python expression list(dict.keys()).
-        let kv = d.keys();
-        println!("{:?}", kv); // print->['a', 'b', 'c']
-
-        // Returns a list of dict values. This is equivalent to the Python expression list(dict.values()).
-        let vv = d.values();
-        println!("{:?}", vv); // print->[1, 2, 3]
-
-        // Returns a list of dict items. This is equivalent to the Python expression list(dict.items()).
-        let iv = d.items();
-        println!("{:?}", iv); // print->[('a', 1), ('b', 2), ('c', 3)]
-
         // Deletes an item. This is equivalent to the Python statement del self[key].
         d.del_item("a");
         println!("{}", d); // print->{'b': 2, 'c': 3}
+
+        // Returns a list of dict keys. This is equivalent to the Python expression list(dict.keys()).
+        let kv = d.keys();
+        println!("{:?}", kv); // print->['b', 'c']
+
+        // Returns a list of dict values. This is equivalent to the Python expression list(dict.values()).
+        let vv = d.values();
+        println!("{:?}", vv); // print->[2, 3]
+
+        // Returns a list of dict items. This is equivalent to the Python expression list(dict.items()).
+        let iv = d.items();
+        println!("{:?}", iv); // print->[('b', 2), ('c', 3)]
 
         /*
         Determines if the dictionary contains the specified key.

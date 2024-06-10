@@ -59,7 +59,7 @@ py::tuple py_tuple(py::tuple i) {
     return i;
 };
 
-PYBIND11_MODULE(cast_py_type, m) {
+PYBIND11_MODULE(py_type_cast, m) {
     m.def("py_list", &py_list);
     m.def("py_dict", &py_dict);
     m.def("py_set", &py_set);

@@ -77,7 +77,7 @@ void py_tuple(py::tuple i) {
     std::cout << py::cast<int>(i[0]) << std::endl; // 索引(不能修改元组元素值)
 };
 
-PYBIND11_MODULE(py_type_ldst, m) {
+PYBIND11_MODULE(py_type, m) {
     m.def("py_list", &py_list);
     m.def("py_dict", &py_dict);
     m.def("py_set", &py_set);
