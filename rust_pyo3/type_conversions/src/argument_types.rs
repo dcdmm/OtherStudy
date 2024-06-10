@@ -32,7 +32,7 @@ pub fn str_test1(x: Bound<'_, PyString>) {
 #[pyfunction]
 pub fn list_test0(mut x: Vec<i32>) {
     println!("{:?}", x);
-    x.push(100);
+    x.push(100); // 不会修改python端传入的list中的值
     println!("{:?}", x);
 }
 
