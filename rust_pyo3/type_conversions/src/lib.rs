@@ -7,6 +7,10 @@ mod argument_types;
 
 #[pymodule]
 fn type_conversions(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(argument_types::int_test0, m)?)?;
+    m.add_function(wrap_pyfunction!(argument_types::int_test1, m)?)?;
+    m.add_function(wrap_pyfunction!(argument_types::int_test2, m)?)?;
+
     m.add_function(wrap_pyfunction!(argument_types::str_test0, m)?)?;
     m.add_function(wrap_pyfunction!(argument_types::str_test1, m)?)?;
 

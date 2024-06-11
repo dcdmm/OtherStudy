@@ -100,7 +100,7 @@ void print_map(std::map<std::string, int>& i) {
     for (const auto &pair: i)
         std::cout << pair.first << '\t' << pair.second << std::endl;
 
-    i.insert(std::pair{"d", 4});
+    i.insert(std::pair{"d", 4}); // 不会修改python端传入的list中的值
     std::cout << std::endl;
 
     for (const auto &pair: i)
@@ -113,7 +113,7 @@ void print_set(std::set<int>& i) {
         std::cout << value << " ";
     }
 
-    i.insert(-1);
+    i.insert(-1); // 不会修改python端传入的set中的值
     std::cout << std::endl;
 
     for (int value : i) {
