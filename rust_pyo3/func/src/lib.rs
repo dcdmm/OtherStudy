@@ -2,6 +2,7 @@
 #![allow(warnings)]
 
 mod signature;
+mod text_signature;
 
 use pyo3::prelude::*;
 
@@ -20,6 +21,9 @@ fn no_args_py() -> usize {
 fn func(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(double, m)?)?;
     m.add_function(wrap_pyfunction!(no_args_py, m)?)?;
+
+    m.add_class::<text_signature::MyStruct>()?;
+
     m.add_function(wrap_pyfunction!(signature::default_para, m)?)?;
     m.add_function(wrap_pyfunction!(signature::args_para, m)?)?;
     m.add_function(wrap_pyfunction!(signature::kwargs_prara, m)?)?;
