@@ -1,4 +1,7 @@
-mod signatures;
+#![allow(non_snake_case)]
+#![allow(warnings)]
+
+mod signature;
 
 use pyo3::prelude::*;
 
@@ -17,7 +20,9 @@ fn no_args_py() -> usize {
 fn func(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(double, m)?)?;
     m.add_function(wrap_pyfunction!(no_args_py, m)?)?;
+    m.add_function(wrap_pyfunction!(signature::default_para, m)?)?;
+    m.add_function(wrap_pyfunction!(signature::args_para, m)?)?;
+    m.add_function(wrap_pyfunction!(signature::kwargs_prara, m)?)?;
 
-    m.add_function(wrap_pyfunction!(signatures::default_para, m)?)?;
     Ok(())
 }
