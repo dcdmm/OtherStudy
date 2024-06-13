@@ -14,5 +14,11 @@ nz1.inner = 2
 print(nz1.inner)  # print->0;#[setter] fn set_inner实现
 # 实例方法
 print(nz1.inner_add(100))  # print->102;fn inner_add实现
-# 类方法
-print(class_py.Nonzero.cls_method())  # print->10;#[classmethod] fn实现 cls_method
+# 类方法(类对象调用)
+print(class_py.Nonzero.cls_method())  # print->10;#[classmethod] fn cls_method实现
+# 类方法(实例对象调用)
+print(nz1.cls_method())  # pirnt->10
+# 静态方法(类对象调用)
+print(class_py.Nonzero.static_method(1, "rust"))  # print->100;#[staticmethod] fn static_method实现
+# 静态方法(实例对象调用)
+print(nz1.static_method(1, "c++"))  # print->100
