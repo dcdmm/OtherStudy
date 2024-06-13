@@ -1,5 +1,6 @@
 use pyo3::exceptions::*;
 use pyo3::prelude::*;
+use pyo3::types::PyType;
 
 #[pyclass]
 pub struct Number {
@@ -12,7 +13,6 @@ pub struct Number {
      */
     #[pyo3(get, set)]
     inner: i32,
-    // The above would make the num field available for reading and writing as a self.inner Python property.
 }
 
 #[pymethods]
@@ -50,5 +50,16 @@ impl Nonzero {
     fn set_inner(&mut self, value: i32) -> PyResult<()> {
         self.inner = value;
         Ok(())
+    }
+
+    // 实例方法
+    fn inner_add(&self, x: i32) -> PyResult<i32> {
+        Ok(self.inner + x)
+    }
+
+    // 类方法
+    #[classmethod]
+    fn cls_method(cls: &Bound<'_, PyType>) -> PyResult<i32> {
+        Ok(10)
     }
 }
