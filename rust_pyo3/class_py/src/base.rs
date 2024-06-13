@@ -61,6 +61,16 @@ impl Nonzero {
         Ok(self.inner + x)
     }
 
+    // 类属性
+    #[classattr]
+    fn my_attribute() -> String {
+        "hello".to_string()
+    }
+
+    // If the class attribute is defined with const code only, one can also annotate associated constants:
+    #[classattr]
+    const MY_CONST_ATTRIBUTE: &'static str = "foobar";
+
     // 类方法(The first parameter implicitly has type &Bound<'_, PyType>.)
     #[classmethod]
     fn cls_method(cls: &Bound<'_, PyType>) -> PyResult<i32> {
@@ -72,14 +82,4 @@ impl Nonzero {
     fn static_method(param1: i32, param2: &str) -> PyResult<i32> {
         Ok(100)
     }
-
-    // 类属性
-    #[classattr]
-    fn my_attribute() -> String {
-        "hello".to_string()
-    }
-
-    // If the class attribute is defined with const code only, one can also annotate associated constants:
-    #[classattr]
-    const MY_CONST_ATTRIBUTE: &'static str = "foobar";
 }
