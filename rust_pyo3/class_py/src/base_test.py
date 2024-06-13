@@ -22,3 +22,13 @@ print(nz1.cls_method())  # pirnt->10
 print(class_py.Nonzero.static_method(1, "rust"))  # print->100;#[staticmethod] fn static_method实现
 # 静态方法(实例对象调用)
 print(nz1.static_method(1, "c++"))  # print->100
+# 类属性(类对象调用)
+print(class_py.Nonzero.my_attribute)  # print->hello
+# 类属性(实例方法调用)
+print(nz1.my_attribute)  # print->hello 
+class_py.Nonzero.my_attribute = "hello world"
+print(class_py.Nonzero.my_attribute)  # print->hello world
+print(nz1.my_attribute)  # print->hello world
+print(nz1.MY_CONST_ATTRIBUTE) # print->foobar
+class_py.Nonzero.MY_CONST_ATTRIBUTE = "Fa" 
+print(nz1.MY_CONST_ATTRIBUTE)  # print->Fa
