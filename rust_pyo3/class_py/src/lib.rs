@@ -3,6 +3,7 @@
 
 mod base;
 mod class_as_function_arguments;
+mod magic_methods;
 mod method_arguments;
 
 use pyo3::{class, prelude::*};
@@ -28,5 +29,7 @@ fn class_py(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
         class_as_function_arguments::dissamble_clone,
         m
     )?)?;
+    m.add_class::<magic_methods::SimpleIterator>()?;
+
     Ok(())
 }
