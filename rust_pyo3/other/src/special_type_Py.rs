@@ -115,6 +115,9 @@ fn Py_clone() {
         println!("{}", second.is(&third)); // print->true
         println!("{}", second.is(&fourth)); // print->true
         println!("{}", second.is(&fifth)); // print->true
+
+        // Gets the reference count of the ffi::PyObject pointer.
+        println!("{}", second.get_refcnt(py)); // print->4
     });
 }
 
