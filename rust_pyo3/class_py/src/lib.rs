@@ -5,6 +5,7 @@ mod base;
 mod class_as_function_arguments;
 mod magic_methods;
 mod method_arguments;
+mod pyclass_para;
 
 use pyo3::{class, prelude::*};
 
@@ -30,6 +31,8 @@ fn class_py(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
         m
     )?)?;
     m.add_class::<magic_methods::SimpleIterator>()?;
+    m.add_class::<pyclass_para::PyPeople>()?;
+    m.add_class::<pyclass_para::PyStudy>()?;
 
     Ok(())
 }

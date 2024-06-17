@@ -3,6 +3,12 @@ use pyo3::prelude::*;
 use pyo3::types::PyType;
 
 #[pyclass]
+/*
+Restrictions(参考见: https://pyo3.rs/v0.21.2/class)
+    * No lifetime parameters
+    * No generic parameters
+    * Must be Send
+*/
 pub struct Number {
     #[pyo3(get, set)]
     inner: i32,
