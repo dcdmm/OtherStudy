@@ -1,0 +1,31 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    # restart defines the policy that the platform applies on container termination.
+    # 对应:docker run --restart
+    restart: always
+    container_name: qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    # expose defines the (incoming) port or a range of ports that Compose exposes from the container. These ports must be accessible to linked services and should not be published to the host machine. Only the internal container ports can be specified.
+    # 对应:docker run --expose
+    expose:
+      - 6333
+      - 6334
+      - 6335
+    # Configs allow services to adapt their behaviour without the need to rebuild a Docker image.
+    configs:
+      # source: The name of the config as it exists in the platform.
+      - source: qdrant_config
+      # target: The path and name of the file to be mounted in the service's task containers. Defaults to /<source> if not specified.
+        target: /qdrant/config/production.yaml
+    volumes:
+      - ./qdrant_data:/qdrant/storage
+
+# Configs let services to adapt their behaviour without the need to rebuild a Docker image. As with volumes, configs are mounted as files into a container's filesystem. The location of the mount point within the container defaults to /<config-name> in Linux containers and C:\<config-name> in Windows containers.
+configs:
+  qdrant_config:
+    # content: The content is created with the inlined value
+    content: |
+      log_level: INFO 
