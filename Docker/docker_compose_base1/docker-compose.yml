@@ -1,6 +1,6 @@
 services:
   qdrant:
-    image: qdrant/qdrant:latest
+    image: qdrant/qdrant:v1.10.0
     # restart defines the policy that the platform applies on container termination.
     # 对应:docker run --restart
     restart: always
