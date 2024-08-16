@@ -14,6 +14,20 @@ services:
       - 6333
       - 6334
       - 6335
+
+    deploy:
+      # resources configures physical resource constraints for container to run on platform. Those constraints can be configured as:
+      resources:
+        # imits: The platform must prevent the container to allocate more.
+        limits:
+          # cpus configures a limit or reservation for how much of the available CPU resources, as number of cores, a container can use. 
+          cpus: '3.0'
+          # memory configures a limit or reservation on the amount of memory a container can allocate, set as a string expressing a byte value.(Values express a byte value as a string in {amount}{byte unit} format: The supported units are b (bytes), k or kb (kilo bytes), m or mb (mega bytes) and g or gb (giga bytes).)
+          memory: 6G
+        reservations:
+          cpus: '0.5'
+          memory: 2048M
+
     # Configs allow services to adapt their behaviour without the need to rebuild a Docker image.
     configs:
       # source: The name of the config as it exists in the platform.
