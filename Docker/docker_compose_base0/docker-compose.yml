@@ -1,6 +1,5 @@
 # 官方参考文档:https://docs.docker.com/compose/compose-file/compose-file-v3/
 
-version: "3.8"
 services:
   mysql: # 容器名称自动生成为:docker_compose_base-mysql-1
     # Specify the image to start the container from. Can either be a repository/tag or a partial image ID.
@@ -59,7 +58,7 @@ services:
 # creates a volume
 # 对应:docker volume create
 volumes:
-  data01:  # 创建名为docker volume inspect docker_compose_base_data01的volume
+  data01:  # 创建名为docker_compose_base_data01的volume
   data02:
 
 # Specify custom networks
