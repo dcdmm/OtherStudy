@@ -28,4 +28,4 @@ A variable reference is replaced by the value of the specified variable or cache
 Variable references can nest and are evaluated from the inside out, e.g. ${outer_${inner_variable}_variable}.
 ]]
 add_executable(command_set0 ${OBJ_VAR})
-# add_executable(qwer main.cpp add.cpp sub.cpp) # 与上等价
+# add_executable(command_set0 main.cpp add.cpp sub.cpp) # 与上等价
