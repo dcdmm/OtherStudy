@@ -11,7 +11,7 @@ find_package(pybind11 CONFIG) # 与上等价
 pybind11_add_module(base base.cpp)
 
 # base.cpython-310-x86_64-linux-gnu.so
-# * base:python中模块名称(应与pybind11定义的模块名称相同)
+# * base:python中模块名称(应与pybind11定义的python模块名相同)
 # * cpython-310:为CPython(Python3.10版本)编译的
 # * x86_64:指令集架构,即基于x86架构的64位拓展
 # * linux-gnu:在基于GNU工具链和库的Linux系统上编译的
