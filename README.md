@@ -1,6 +1,4 @@
-# OtherStudy
-
-## 目录
+### 目录
 
 * CMake--->CMake学习
 * Docker--->Docker学习
